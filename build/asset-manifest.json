@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/static/css/main.40e48c6a.css",
+    "main.js": "/static/js/main.615c8d3e.js",
+    "static/media/correct.mp3": "/static/media/correct.592c01645a961b8bee8d.mp3",
+    "static/media/eva_flip-fill.svg": "/static/media/eva_flip-fill.1613d68f6173c2490870d54f473a166a.svg",
+    "index.html": "/index.html",
+    "main.40e48c6a.css.map": "/static/css/main.40e48c6a.css.map",
+    "main.615c8d3e.js.map": "/static/js/main.615c8d3e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.40e48c6a.css",
+    "static/js/main.615c8d3e.js"
+  ]
+}
