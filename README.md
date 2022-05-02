@@ -4,7 +4,7 @@
 
 - This project was built for DevJam, and was heavily inspired by [Brainscape](https://www.brainscape.com)
 
-- This is my first project built with react, with little to no prior experience of the framework.
+- This is my first project built with react, with little to no prior experience of the framework, and first project published to github.
 
   **A [live version](https://extraordinary-daffodil-435391.netlify.app/) of the website can be seen here**
 
