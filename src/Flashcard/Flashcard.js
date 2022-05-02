@@ -3,7 +3,7 @@ import "./Flashcard.css";
 import flipIcon from "./eva_flip-fill.svg";
 import { confidenceContext, animationContext } from "../App.js";
 
-function Flashcard({ deckName, cardNo, question, answer, cardAmount }) {
+const Flashcard = ({ deckName, cardNo, question, answer, cardAmount }) => {
   const [isRevealed, setIsRevealed] = useState(false);
   const [isConfident, setIsConfident] = useContext(confidenceContext);
   const [showEffect, setShowEffect] = useContext(animationContext);
@@ -19,9 +19,7 @@ function Flashcard({ deckName, cardNo, question, answer, cardAmount }) {
 
   //Ensures flashcard is on the question side when a new one is picked.
   useEffect(() => {
-    if (true || false) {
-      setIsRevealed(false);
-    }
+    setIsRevealed(false);
   }, [isConfident]);
 
   return (
@@ -73,6 +71,6 @@ function Flashcard({ deckName, cardNo, question, answer, cardAmount }) {
       </div>
     </div>
   );
-}
+};
 
 export default Flashcard;

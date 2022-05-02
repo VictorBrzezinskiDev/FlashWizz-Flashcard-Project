@@ -8,29 +8,19 @@ import Flashcard from "./Flashcard/Flashcard";
 export const confidenceContext = createContext();
 export const animationContext = createContext();
 
-function App() {
+const App = () => {
   const [isConfident, setIsConfident] = useState(null);
   const [flashcardNo, setFlashcardNo] = useState(0);
-
   const [showEffect, setShowEffect] = useState(false);
   const [effectContent, setEffectContent] = useState("");
-
   const [deck, setDeck] = useState("radiation");
 
-  useEffect(() => {
-    //Determine Which Animation To Play
-    if (isConfident === true) {
-      console.log("Yay!");
-      setEffectContent("👍");
-      let sound = new Audio(correctAudio);
-      sound.volume = 0.1;
-      sound.play();
-    } else if (isConfident === false) {
-      setEffectContent("");
-      console.log("Nay!");
-    }
-
-    //Make sure that a flashcard is not made for an index that does not exist. (Resets flashcard number if last card complete)
+  const playSound = () => {
+    let sound = new Audio(correctAudio);
+    sound.volume = 0.1;
+    sound.play();
+  };
+  const flashcardNoHandler = () => {
     if (isConfident === true || isConfident === false) {
       if (data[deck].flashcards[flashcardNo + 1]) {
         setFlashcardNo(flashcardNo + 1);
@@ -38,12 +28,26 @@ function App() {
         setFlashcardNo(0);
       }
     }
-    //Displays effect and restores the progression variable to 'null'.
+  };
+  const animationHandler = () => {
+    if (isConfident === true) {
+      setEffectContent("👍");
+      playSound();
+    } else if (isConfident === false) {
+      setEffectContent("");
+    }
     setShowEffect(true);
+  };
+
+  useEffect(() => {
+    //Plays Animation,
+    animationHandler();
+    //Decides next flashcard,
+    flashcardNoHandler();
+    //Clears player's input
     setIsConfident(null);
   }, [isConfident]);
 
-  //Stops animation after one second
   useEffect(() => {
     if (showEffect === true) {
       setTimeout(() => {
@@ -76,6 +80,6 @@ function App() {
       </div>
     </div>
   );
-}
+};
 
 export default App;
