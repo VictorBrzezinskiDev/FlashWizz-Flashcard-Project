@@ -4,6 +4,7 @@ import data from "./data.json";
 import correctAudio from "./correct.mp3";
 
 import Flashcard from "./Flashcard/Flashcard";
+import Navbar from "./Navbar/Navbar";
 
 export const confidenceContext = createContext();
 export const animationContext = createContext();
@@ -78,6 +79,7 @@ const App = () => {
       <div className={`Effect ${showEffect ? "Show" : null}`}>
         {effectContent}
       </div>
+      <Navbar />
     </div>
   );
 };
