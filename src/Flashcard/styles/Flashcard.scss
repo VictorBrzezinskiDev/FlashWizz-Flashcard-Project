@@ -1,0 +1,47 @@
+$primary: #728fbc;
+
+.Flashcard {
+  width: 800px;
+  position: absolute;
+  height: 500px;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0px 20px 40px 20px rgba(0, 0, 0, 0.025);
+  transition: 0.2s ease;
+}
+
+.Hide {
+  display: none;
+}
+
+.Swap {
+  opacity: 1;
+}
+
+@media (max-width: 872px) {
+  .Flashcard {
+    width: 90%;
+    height: 80%;
+  }
+}
+
+.Effect {
+  position: fixed;
+  font-size: 200px;
+  opacity: 0;
+  top: 25%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.5s ease;
+  pointer-events: none;
+}
+
+.Show {
+  visibility: visible;
+  opacity: 1;
+  font-size: 300px;
+}

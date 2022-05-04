@@ -1,73 +1,98 @@
-import React, { useState, useContext, useEffect } from "react";
-import "./Flashcard.css";
-import flipIcon from "./eva_flip-fill.svg";
-import { confidenceContext, animationContext } from "../App.js";
+//Imports
+import React, { useState, useContext, useEffect, createContext } from "react";
+// -- Media & Styling
+import "./styles/Flashcard.css";
+import data from "./data.json";
+import correctAudio from "./correct.mp3";
+// -- Components
+import PlayMode from "./PlayMode/PlayMode";
+import SelectMode from "./SelectMode/SelectMode";
 
-const Flashcard = ({ deckName, cardNo, question, answer, cardAmount }) => {
-  const [isRevealed, setIsRevealed] = useState(false);
-  const [isConfident, setIsConfident] = useContext(confidenceContext);
-  const [showEffect, setShowEffect] = useContext(animationContext);
+//Exports
+export const playModeContext = createContext();
+export const deckContext = createContext();
+export const confidenceContext = createContext();
 
-  //Function to reduce length of question for preview span on answer side.
-  const summarize = (str) => {
-    let strSummary = str.substring(0, 50).trim();
-    if (str.length > 50) {
-      strSummary += "...";
+const Flashcard = () => {
+  //States
+  const [isPlayMode, setIsPlayMode] = useState(false);
+  const [deck, setDeck] = useState("radiation");
+  const [flashcardNo, setFlashcardNo] = useState(0);
+  const [isConfident, setIsConfident] = useState(null);
+  const [showEffect, setShowEffect] = useState(false);
+  const [effectContent, setEffectContent] = useState("");
+
+  const flashcardNoHandler = () => {
+    if (isConfident === true || isConfident === false) {
+      if (data[deck].flashcards[flashcardNo + 1]) {
+        setFlashcardNo(flashcardNo + 1);
+      } else {
+        setFlashcardNo(0);
+        setIsPlayMode(false);
+      }
     }
-    return strSummary;
   };
 
-  //Ensures flashcard is on the question side when a new one is picked.
+  const animationHandler = () => {
+    if (isConfident === true) {
+      setEffectContent("👍");
+      playSound();
+    } else if (isConfident === false) {
+      setEffectContent("");
+    }
+    setShowEffect(true);
+  };
+
   useEffect(() => {
-    setIsRevealed(false);
+    flashcardNoHandler();
+    setIsConfident(null);
   }, [isConfident]);
+
+  useEffect(() => {
+    setFlashcardNo(0);
+  }, [isPlayMode]);
+
+  const playSound = () => {
+    let sound = new Audio(correctAudio);
+    sound.volume = 0.1;
+    sound.play();
+  };
+
+  useEffect(() => {
+    animationHandler();
+  }, [isConfident]);
+
+  useEffect(() => {
+    if (showEffect === true) {
+      setTimeout(() => {
+        setShowEffect(false);
+      }, 1000);
+    }
+  }, [showEffect]);
 
   return (
     <div className={`Flashcard ${showEffect ? "Swap" : null}`}>
-      <div className="Leader">
-        <span>{deckName}</span>
-        <span>
-          Card: {cardNo}/{cardAmount}
-        </span>
-      </div>
-      <div className="Content">
-        <span className={isRevealed ? null : "Hide"}>
-          {summarize(question)}
-        </span>
-        <p>{isRevealed ? answer : question}</p>
-        <img
-          src={flipIcon}
-          onClick={() => {
-            setIsRevealed(!isRevealed);
-          }}
-          alt=""
-        />
-      </div>
-      <div className="Input">
-        <button
-          onClick={() => {
-            setIsRevealed(true);
-          }}
-          className={`Reveal ${isRevealed ? "Hide" : null}`}
-        >
-          Click To Reveal Answer
-        </button>
-        <button
-          onClick={() => {
-            setIsConfident(false);
-          }}
-          className={`Inconfident ${isRevealed ? null : "Hide"}`}
-        >
-          I Am Not Confident
-        </button>
-        <button
-          onClick={() => {
-            setIsConfident(true);
-          }}
-          className={`Confident ${isRevealed ? null : "Hide"}`}
-        >
-          I Am Confident
-        </button>
+      <confidenceContext.Provider value={[isConfident, setIsConfident]}>
+        <playModeContext.Provider value={[isPlayMode, setIsPlayMode]}>
+          <PlayMode
+            deckName={data[deck].deckName}
+            cardNo={
+              data[deck].flashcards.indexOf(
+                data[deck].flashcards[flashcardNo]
+              ) + 1
+            }
+            cardAmount={data[deck].flashcards.length}
+            question={data[deck].flashcards[flashcardNo].question}
+            answer={data[deck].flashcards[flashcardNo].answer}
+          />
+
+          <deckContext.Provider value={[deck, setDeck]}>
+            <SelectMode />
+          </deckContext.Provider>
+        </playModeContext.Provider>
+      </confidenceContext.Provider>
+      <div className={`Effect ${showEffect ? "Show" : null}`}>
+        {effectContent}
       </div>
     </div>
   );

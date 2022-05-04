@@ -1,0 +1,94 @@
+.Hide {
+  display: none;
+}
+
+.SelectMode {
+  padding: 16px;
+  overflow-y: scroll;
+}
+
+.SelectWidget {
+  width: 100%;
+  height: 81px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #9bb0d0;
+  border-radius: 10px;
+  margin-bottom: 32px;
+}
+
+.SelectWidget button {
+  width: 240px;
+  height: 100%;
+  border-radius: 10px;
+  border: none;
+  background-color: #728fbc;
+  font-size: 24px;
+  color: white;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.SelectWidget button:hover {
+  width: 260px;
+  background-color: #7b99c8;
+}
+
+.SelectWidget span {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  margin-left: 25px;
+}
+
+.SelectWidget:last-child {
+  margin-bottom: 0;
+}
+
+.SelectMode::-webkit-scrollbar {
+  display: none;
+}
+
+@media (max-width: 872px) {
+  .SelectWidget {
+    width: 100%;
+    height: 162px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .SelectWidget button {
+    height: 81px;
+    width: 100%;
+  }
+  .SelectWidget button:hover {
+    width: 100%;
+  }
+  .SelectWidget span {
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    padding: 16px;
+  }
+}
+
+@media (max-width: 472px) {
+  .SelectWidget span {
+    font-size: 16px;
+  }
+  .SelectWidget button {
+    font-size: 18px;
+    padding: 16px;
+  }
+}
+/*# sourceMappingURL=SelectMode.css.map */

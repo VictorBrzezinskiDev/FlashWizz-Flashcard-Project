@@ -1,0 +1,128 @@
+{
+  "radiation": {
+    "deckName": "Radiation",
+    "flashcards": [
+      {
+        "question": "What is 'ionisation'?",
+        "answer": "Ionisation is the addition or removal of an electron from a neutral (uncharged) atom."
+      },
+      {
+        "question": "What are the three types of 'ionising radiation'?",
+        "answer": "The three types of 'ionising radiation' are alpha, beta, and gamma."
+      },
+      {
+        "question": "Describe the properties of alpha particles. (What are they? What is their absorption? Ionisation rate?)",
+        "answer": "Alpha particles are 2 neutrons, and 2 protons - therefore they are positively charged. They can be described as the nucleus of helium. - Alpha particles can travel roughly 5cm through air. They will also be stopped by a sheet of paper. - These are far more ionising than beta or gamma."
+      },
+      {
+        "question": "Describe the properties of beta particles. (What are they? What causes them? What is their absorption? Ionisation rate?)",
+        "answer": "Beta particles are fast moving electrons. They come from within the nucleus of an atom. They are caused when a neutron breaks up into a positively charged proton, and negatively charged electron. Beta particles can travel several metres through air. They will be stopped by a thin sheet of aluminium. Beta particles are less ionising than Alpha."
+      },
+      {
+        "question": "Describe the properties of gamma rays. (What are they? What causes them? What is their absorption? Ionisation rate?)",
+        "answer": "Gamma rays have no mass or charge, and carry energy leaving the nucleus in a more stable state. Gamma rays are caused by energy changes in a nucleus. Gamma radiation can travel several hundred metres in air. High levels of gamma can only be stopped by many metres of concrete. Gamma rays cause less ionisation than alpha or beta particles."
+      },
+      {
+        "question": "Describe a Medical use of radiation.",
+        "answer": "Due to it being able to destroy cells, radiation can be used in the treatment of cancer. Gamma rays from a radioactive source, such as 'cobalt-60' can be centred on the cancerous tumour to kill it. Surrounding healthy tissue does not receive much radiation as it is fixed on the tumour."
+      },
+      {
+        "question": "Describe a use of radiation in industry.",
+        "answer": "Radioactive tracers can be used in industry to find leaks or blockages in underground pipes. These tracers give off particles that can be detected and turned into an image to help find these leaks/blockages."
+      },
+      {
+        "question": "How can we detect radiation through a Geiger-Muller (GM) tube?",
+        "answer": "If alpha, beta, or gamma enter the tube, ions are produced resulting in a small current flow. The current is amplified and a counter counts the number of events giving an indication of the radioactivity."
+      },
+      {
+        "question": "How can we detect radiation through a photographic film badge?",
+        "answer": "Photographic film blackens or darkens when it is exposed to radiation. The more radiation absorbed, the darker the film becomes."
+      }
+    ]
+  },
+  "waves": {
+    "deckName": "Waves",
+    "flashcards": [
+      {
+        "question": "Define a 'transverse' wave, and provide examples.",
+        "answer": "A 'transverse' wave is a wave in which the medium vibrates at right angles to the direction of its propagation. Some examples of transverse waves are water, and any member of the EM spectrum."
+      },
+      {
+        "question": "Define a 'transverse' wave, and provide examples.",
+        "answer": "A 'longitudinal' wave is a wave vibrating in the direction of propagation. An example of a longitudinal wave is sound."
+      },
+      {
+        "question": "Describe these basic wave properties: Crest, Trough, Wavelength, Amplitude.",
+        "answer": "The crest is the highest point on a wave. The trough is the lowest point on a wave. The wavelength is the distance until a wave repeats itself. The amplitude is the height of the wave from the rest position."
+      }
+    ]
+  },
+  "Assisi": {
+    "deckName": "Assisi",
+    "flashcards": [
+      {
+        "question": "Describe how the writer uses imagery in the phrase 'like a half-filled sack' to emphasise his awkward and ungainly appearance/movement.",
+        "answer": "A simile is used to create a comparison with an inanimate object, suggesting the beggar is inhuman. This comparison also emphasises how awkward and ungainly the beggar is in his appearance and movements."
+      },
+      {
+        "question": "Describe how the writer uses imagery in the phrase 'tiny twisted legs from which / sawdust might run' to emphasise the feeling of worthlessness the priest and the tourists perhaps have towards the beggar.",
+        "answer": "The metaphor of 'legs from which sawdust might run' links the beggar to an inanimate object (sawdust is something that was once living but has been ground up into pulp) and perhaps suggests the priest and tourists see the beggar as worthless and spoiling the picturesque setting."
+      }
+    ]
+  },
+  "Basking Shark": {
+    "deckName": "Basking Shark",
+    "flashcards": [
+      {
+        "question": "How does McCaig use imagery in the phrase 'on a rock' to describe what he encounters? (stanza 1)",
+        "answer": "McCaig uses a metaphor which compares the shark to a rock - being bulky/solid, without feeling or intelligence. This fully encapsulates who the shark really is as it is introduced to the poem."
+      },
+      {
+        "question": "How does McCaig use imagery describing the shark as a 'room sized monster' to emphasise his feelings? (stanza 2)",
+        "answer": "The metaphor of 'monster' shows that McCaig feared the shark, and emphasises the fact that it is low down on the evolutionary scale."
+      }
+    ]
+  },
+  "N5 Spanish": {
+    "deckName": "N5 Spanish",
+    "flashcards": [
+      {
+        "question": "Introduce yourself.",
+        "answer": "He visto su anuncio y le escribo para solicitar el pueste (de job). Me llamo Ali y tengo quince años pero tendré dieciseis en junio. vivo en un bastante pequeño pueblo, Kilmarnock en Escocia."
+      },
+      {
+        "question": "¿Que piensas de las redes sociales?",
+        "answer": "Diria que me gustan porque son rápidos pero tengo que admitir que las redes sociales pueden ser peligrosos para los jóvenes porque hay timos y descanocidos"
+      },
+      {
+        "question": "¿Que peligros tiene el internet?",
+        "answer": "El internet tiene muchos peligros, por ejemplo hay mucho fraude y viruses. ¡No bueno!"
+      }
+    ]
+  },
+  "2.2 - Electrical Concepts": {
+    "deckName": "2.2 - Electrical Concepts",
+    "flashcards": [
+      {
+        "question": "What happens to the negative charge in an electric field?",
+        "answer": "It goes in the opposite direction to the field. unlike a positive charge."
+      },
+      {
+        "question": "What is an Electrical Insulator?",
+        "answer": "An electrical insulator is a material in which charge carriers cannot move"
+      },
+      {
+        "question": "What is the unit for current?",
+        "answer": "Ampere (I)"
+      },
+      {
+        "question": "What is the equation between Charge, Current, and time?",
+        "answer": "Q = IT"
+      },
+      {
+        "question": "What is the unit for charge?",
+        "answer": "Coulomb (Q)"
+      }
+    ]
+  }
+}
