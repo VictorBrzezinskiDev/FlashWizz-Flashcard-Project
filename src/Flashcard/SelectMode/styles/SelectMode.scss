@@ -4,7 +4,15 @@
 
 .SelectMode {
   padding: 16px;
+  position: relative;
   overflow-y: scroll;
+  h1 {
+    text-align: center;
+    margin-bottom: 9px;
+    color: #728fbc;
+    width: 100%;
+    background-color: white;
+  }
 }
 
 .SelectWidget {
@@ -15,7 +23,7 @@
   align-items: center;
   background-color: #9bb0d0;
   border-radius: 10px;
-  margin-bottom: 32px;
+  margin-bottom: 48px;
   button {
     width: 240px;
     height: 100%;
@@ -42,6 +50,14 @@
   &:last-child {
     margin-bottom: 0;
   }
+}
+
+.DownArrow {
+  height: 24px;
+}
+
+.PlayButton {
+  height: 18px;
 }
 
 .SelectMode::-webkit-scrollbar {

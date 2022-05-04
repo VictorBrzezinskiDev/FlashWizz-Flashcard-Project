@@ -4,6 +4,8 @@ import { playModeContext, deckContext } from "../Flashcard.js";
 // -- Media & Styling
 import "./styles/SelectMode.css";
 import data from "../data.json";
+import DownArrow from "./images/DownArrow.svg";
+import PlayButton from "./images/PlayButton.svg";
 
 function SelectMode() {
   //States
@@ -12,6 +14,11 @@ function SelectMode() {
 
   return (
     <div className={`SelectMode ${isPlayMode ? "Hide" : true}`}>
+      <h1>
+        Select A Deck <img className="DownArrow" src={DownArrow} alt="" />
+      </h1>
+
+      {/* Maps over each deck in data.json for selection */}
       {Object.keys(data).map((deck, i) => (
         <div className="SelectWidget" key={deck}>
           <span>
@@ -23,7 +30,7 @@ function SelectMode() {
               setIsPlayMode(true);
             }}
           >
-            Play Deck
+            <img className="PlayButton" src={PlayButton} alt="" /> Play Deck
           </button>
         </div>
       ))}

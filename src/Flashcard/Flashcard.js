@@ -15,13 +15,28 @@ export const confidenceContext = createContext();
 
 const Flashcard = () => {
   //States
+
+  //Controls whether flashcard is in "play" mode or in "select" mode
   const [isPlayMode, setIsPlayMode] = useState(false);
+
+  //Controls which deck in the data.json file is selected
   const [deck, setDeck] = useState("radiation");
+
+  //The flashcard number (selects from array of flashcards)
   const [flashcardNo, setFlashcardNo] = useState(0);
+
+  //Controls player response, accepted value "true & false", null means waiting for player input
   const [isConfident, setIsConfident] = useState(null);
+
+  //Controls whether animation effect should be triggered
   const [showEffect, setShowEffect] = useState(false);
+
+  //Controls what content is to be displayed in the animation
   const [effectContent, setEffectContent] = useState("");
 
+  //Handlers
+
+  //Updates flashcard number to + 1, or boots back into menu if the next card does not exist.
   const flashcardNoHandler = () => {
     if (isConfident === true || isConfident === false) {
       if (data[deck].flashcards[flashcardNo + 1]) {
@@ -33,35 +48,43 @@ const Flashcard = () => {
     }
   };
 
+  //Handles which animation to play based on whether player is confident or not.
   const animationHandler = () => {
     if (isConfident === true) {
       setEffectContent("👍");
-      playSound();
+      soundHandler();
     } else if (isConfident === false) {
       setEffectContent("");
     }
     setShowEffect(true);
   };
 
+  //Handles audio queue which plays after a flashcard is correct.
+  const soundHandler = () => {
+    let sound = new Audio(correctAudio);
+    sound.volume = 0.05;
+    sound.play();
+  };
+
+  //Effects
+
+  //Whenever isConfident updates, update flashcard and set player input to null.
   useEffect(() => {
     flashcardNoHandler();
     setIsConfident(null);
   }, [isConfident]);
 
+  //Ensures that if you leave mid deck, when selecting new deck it starts from 0.
   useEffect(() => {
     setFlashcardNo(0);
   }, [isPlayMode]);
 
-  const playSound = () => {
-    let sound = new Audio(correctAudio);
-    sound.volume = 0.1;
-    sound.play();
-  };
-
+  //Triggers animationHandler whenever player input is accepted.
   useEffect(() => {
     animationHandler();
   }, [isConfident]);
 
+  //Delay of 1000ms after animation starts before it ends.
   useEffect(() => {
     if (showEffect === true) {
       setTimeout(() => {

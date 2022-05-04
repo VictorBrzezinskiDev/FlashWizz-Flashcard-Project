@@ -1,15 +1,18 @@
 import React, { useState, useContext, useEffect } from "react";
-import flipIcon from "./eva_flip-fill.svg";
-import ReturnIcon from "./return.svg";
+import flipIcon from "./images/eva_flip-fill.svg";
+import ReturnIcon from "./images/return.svg";
 import { confidenceContext } from "../Flashcard";
 import "./styles/PlayMode.css";
 import { playModeContext } from "../Flashcard";
 
 function PlayMode({ deckName, cardNo, question, answer, cardAmount }) {
+  //Controls whether the flashcard is in "reveal" mode, meaning if it is flipped to show answer
   const [isRevealed, setIsRevealed] = useState(false);
+
   const [isConfident, setIsConfident] = useContext(confidenceContext);
   const [isPlayMode, setIsPlayMode] = useContext(playModeContext);
 
+  //Takes question and creates a 50 character "summary" to display on "revealed" side as to not take up much space
   const summarize = (str) => {
     let strSummary = str.substring(0, 50).trim();
     if (str.length > 50) {
@@ -18,6 +21,7 @@ function PlayMode({ deckName, cardNo, question, answer, cardAmount }) {
     return strSummary;
   };
 
+  //Unreveal card when next card is selected
   useEffect(() => {
     setIsRevealed(false);
   }, [isConfident]);

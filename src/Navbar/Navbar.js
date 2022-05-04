@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+// -- Media & Styling
 import "./styles/Navbar.css";
-import burger from "./burger.svg";
-import logo from "./logo.svg";
+import burger from "./images/burger.svg";
+import logo from "./images/logo.svg";
 
 function Navbar() {
   const [navActive, setNavActive] = useState(false);
@@ -16,7 +17,9 @@ function Navbar() {
         className={`nav-links ${navActive ? "responsive-nav-active" : null}`}
       >
         <a href="">Home</a>
-        <a href="">About</a>
+        <a href="https://github.com/VictorBrzezinskiDev/FlashWizz-Flashcard-Project">
+          About
+        </a>
       </div>
 
       <div className="call-to-action">
